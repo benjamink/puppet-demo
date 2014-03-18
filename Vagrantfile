@@ -12,9 +12,10 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "centos64-x86_64-20131030"
+  config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-i386-v20130731.box"
+  config.vm.box = "CentOS-6.4-i386-v20130731"
 
-  config.vm.provision :shell, :inline => CENTOS6_INSTALL_PUPPET
+  #config.vm.provision :shell, :inline => CENTOS6_INSTALL_PUPPET
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
